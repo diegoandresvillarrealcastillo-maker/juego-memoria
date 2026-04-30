@@ -1,2 +1,144 @@
-# juego-memoria
-Juego de memoria interactivo con temática cristiana hecho en HTML, CSS y JavaScript
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego de Memoria Ilustrativo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Luckiest+Guy&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="experience">
+      <section class="game-column">
+        <header class="hero-card">
+          <p class="eyebrow">Memoria ilustrativa</p>
+          <div class="title-row" aria-hidden="true">
+            <span class="title-mark">✦</span>
+            <span class="title-mark">✦</span>
+          </div>
+          <h1>Juego de memoria</h1>
+          <p class="hero-copy">
+            Encuentra las 18 parejas, despeja el tablero y revela la imagen
+            escondida paso a paso.
+          </p>
+        </header>
+
+        <section class="board-card">
+          <div class="status-bar">
+            <article class="stat-chip">
+              <span class="stat-label">Parejas</span>
+              <strong id="matchesCount">0 / 18</strong>
+            </article>
+            <article class="stat-chip">
+              <span class="stat-label">Movimientos</span>
+              <strong id="movesCount">0</strong>
+            </article>
+            <article class="stat-chip">
+              <span class="stat-label">Revelación</span>
+              <strong id="progressPercent">0%</strong>
+            </article>
+            <button class="restart-button" id="restartButton" type="button">
+              Mezclar de nuevo
+            </button>
+          </div>
+
+          <div class="board-shell" id="boardShell">
+            <div class="board-overlay">
+              <span class="overlay-kicker">Imagen oculta</span>
+              <strong id="overlayProgress">0 de 18 parejas</strong>
+            </div>
+            <section
+              class="memory-grid"
+              id="memoryGrid"
+              aria-label="Tablero de cartas del juego de memoria"
+            ></section>
+            <section class="victory-banner" id="victoryBanner" hidden>
+              <p class="victory-kicker">¡Tablero completado!</p>
+              <h2>La ilustración quedó revelada</h2>
+              <p>
+                Reinicia la partida para volver a mezclar las 36 cartas y jugar
+                otra ronda.
+              </p>
+              <button class="restart-button" id="victoryRestart" type="button">
+                Jugar otra vez
+              </button>
+            </section>
+          </div>
+        </section>
+
+        <section class="guide-card">
+          <div class="section-heading">
+            <span class="section-mark">✦</span>
+            <h2>18 imágenes para concordancia</h2>
+            <span class="section-mark">✦</span>
+          </div>
+          <p class="guide-copy">
+            Estas son las ilustraciones que aparecen dentro del tablero.
+          </p>
+          <div
+            class="guide-grid"
+            id="guideGrid"
+            aria-label="Guía visual de las ilustraciones del juego"
+          ></div>
+        </section>
+      </section>
+
+      <aside class="challenge-column">
+        <section class="challenge-card">
+          <p class="challenge-title">Desafiados</p>
+          <h2>Pares ilustrados</h2>
+          <p class="challenge-copy">
+            La columna de apoyo muestra las cartas ordenadas por parejas para
+            conservar el estilo de la referencia y servir como guía visual.
+          </p>
+          <div
+            class="challenge-grid"
+            id="challengeGrid"
+            aria-label="Panel decorativo con las parejas ilustradas"
+          ></div>
+        </section>
+
+        <section class="mission-card">
+          <div class="mission-copy">
+            <span class="mission-tag">Misión</span>
+            <h3>Revela el fondo acierto tras acierto</h3>
+            <p>
+              Cada vez que encuentras una pareja, las cartas desaparecen y se
+              abre una nueva ventana de la imagen oculta.
+            </p>
+          </div>
+
+          <div class="reveal-meter">
+            <div class="meter-ring">
+              <div class="meter-core">
+                <span class="meter-label">Avance</span>
+                <strong id="meterPercent">0%</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="tip-list">
+            <article class="tip-pill">
+              <strong>36 cartas</strong>
+              <span>Distribuidas en una cuadrícula 6x6.</span>
+            </article>
+            <article class="tip-pill">
+              <strong>18 parejas</strong>
+              <span>Las imágenes se duplican y se mezclan en cada partida.</span>
+            </article>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <p class="sr-only" id="liveRegion" aria-live="polite"></p>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
