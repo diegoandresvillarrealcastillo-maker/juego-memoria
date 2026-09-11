@@ -1,7 +1,7 @@
 const CARD_ASSETS = [
   { id: "arbol", label: "Árbol", src: "./arbol.png" },
   { id: "barco", label: "Barco", src: "./barco.avif" },
-  { id: "biblia", label: "Biblia", src: "./biblia.png" },
+  { id: "biblia", label: "Biblia", src: "./biblia.webp" },
   { id: "corazon", label: "Corazón", src: "./corazon.avif" },
   { id: "corona", label: "Corona", src: "./corona.avif" },
   { id: "cruz", label: "Cruz", src: "./cruz.avif" },

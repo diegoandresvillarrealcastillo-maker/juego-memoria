@@ -224,7 +224,7 @@ select {
   z-index: -2;
   background:
     linear-gradient(180deg, rgba(255, 238, 206, 0.28), rgba(255, 202, 113, 0.14)),
-    url("./fondo1.png") center center / cover no-repeat;
+    url("./fondo1.webp") center center / cover no-repeat;
   transform: scale(1.04);
 }
 
